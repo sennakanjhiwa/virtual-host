@@ -13,7 +13,11 @@ sudo a2dismod php8.2
 sudo a2dismod php8.3
 sudo systemctl restart apache2
 
-3. Pengaturan Host
+CATATAN: Periksa Mod Rewrite: Pastikan mod_rewrite diaktifkan pada Apache. Aktifkan dengan perintah:
+sudo a2enmod rewrite
+sudo systemctl restart apache2
+
+4. Pengaturan Host
 sudo nano /etc/hosts
 Tambahkan baris berikut:
 127.0.0.1   namafolder.test
