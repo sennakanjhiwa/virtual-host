@@ -23,14 +23,16 @@ Tambahkan baris berikut:
 127.0.0.1   namafolder.test
 
 3. Virtual host apache jadi .test
-sudo ./create_apache_vhost.sh
+Pastikan mod_vhost_alias Aktif
+sudo a2ensite auto-vhost
+sudo systemctl restart apache2
 
-4. Virtual host nginx jadi .test
-sudo ./create_nginx_vhost.sh
+5. Virtual host nginx jadi .test
+sudo ln -s /etc/nginx/sites-available/auto-vhost /etc/nginx/sites-enabled/
 
 6. Ubah versi php-fpm nginx
-sudo nano /etc/nginx/sites-enabled/default
+sudo nano /etc/nginx/sites-available/auto-vhost
 
 7. Mematikan keyboard laptop
 xinput list
-xinput set-prop <ID> “Device Enabled” 0
+xinput disable 20
